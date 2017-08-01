@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.wrap{
+  margin: 20px 40px 0 40px;
+}
+
+/* 대문 */
+.header {
+  height: 100px;
+}
+.logo {
+  float: left;
+  display: inline-block;
+  line-height: 100px;
+  color: aquamarine;
+}
+.nav {
+  display: inline-block;
+}
+.nav_list {
+  display: inline-block;
+  line-height: 100px;
+  padding: 0 20px;
+}
+/* .member {
+float: right;
+height: 100px;
+} 
+.log_in_btn {
+width: 100px;
+transform: translateY(30px);
+}
+.sign_up_btn {
+width: 100px;
+transform: translateY(35px);
+} */
+#toggle_1 {
+  display: none;
+}
+#toggle_2 {
+  display: none;
+}
+.membership {
+  float: right;
+  margin-right: 20px;
+  width: 100px;
+}
+.log_in_btn {
+  display: inline-block;
+  cursor: pointer;
+  line-height: 100px;
+}
+.sign_up_btn {
+  display: inline-block;
+  cursor: pointer;
+  color: greenyellow;
+  line-height: 100px;
+}
+
+/* 섹션 1 시작 */
+.article_head {
+  padding: 10px 10px 10px 0;
+}
+.article_content {
+  width: 500px;
+  padding: 10px 10px 10px 0;
+}
+
+input_text {
+  padding: 20px;
+  background-color: gainsboro;
+}
