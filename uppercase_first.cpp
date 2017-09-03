@@ -24,7 +24,7 @@ main()
     
 
     // 문자열 순회. 대소문자 구분해서 각각 배열에 담음.
-    for (int index_Word = 0; index_Word < strlen(Word); index_Word++){
+    for (index_Word; index_Word < strlen(Word); index_Word++){
         
         // 대문자 구분
         if (Word[index_Word] >= 65 && Word[index_Word] <= 90){
@@ -79,7 +79,7 @@ main()
                 index_temp++;
             }
 
-            // 단어를 담았으면 띄어쓰기 한 칸.
+            // 단어를 배열에 담고 띄어쓰기 한 칸.
             reverse_array[index_reverse] = SPACE;
 
             index_reverse++;
