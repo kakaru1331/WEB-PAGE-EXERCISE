@@ -2,100 +2,93 @@
 #include <stdlib.h>
 #include <string.h>
 #include <iostream>
+
 using namespace std;
 
-#define SPACE 32
+#define SPACE ' '
 
-main()
+int main()
 {
-    char Word[200] = "War does Not determine Who is Right only who is Left";
-    char upper_array[200];
-    char lower_array[200];
-    char reverse_array[200];
+    char ca_Word[200] = "War does Not determine Who is Right only who is Left";
+    char ca_upper_array[200];
+    char ca_lower_array[200];
+    char ca_reverse_array[200];
 
-    memset(upper_array, 0x00, sizeof(upper_array));
-    memset(lower_array, 0x00, sizeof(lower_array));
-    memset(reverse_array, 0x00, sizeof(reverse_array));
+    memset(ca_upper_array, 0x00, sizeof(ca_upper_array));
+    memset(ca_lower_array, 0x00, sizeof(ca_lower_array));
+    memset(ca_reverse_array, 0x00, sizeof(ca_reverse_array));
 
-
-    int index_Word = 0;
-    int index_upper = 0;
-    int index_lower = 0;
+    int i_index_Word = 0;
+    int i_index_upper = 0;
+    int i_index_lower = 0;
     
-
     // 문자열 순회. 대소문자 구분해서 각각 배열에 담음.
-    for (index_Word; index_Word < strlen(Word); index_Word++){
-        
+    for (i_index_Word; i_index_Word < strlen(ca_Word); i_index_Word++){        
         // 대문자 구분
-        if (Word[index_Word] >= 65 && Word[index_Word] <= 90){
-            while (!(Word[index_Word] == SPACE)){
-                upper_array[index_upper] = Word[index_Word];
+        if (ca_Word[i_index_Word] >= 'A' && ca_Word[i_index_Word] <= 'Z'){
+            while (!(ca_Word[i_index_Word] == SPACE)){
+                ca_upper_array[i_index_upper] = ca_Word[i_index_Word];
                 
-                index_Word++;
-                index_upper++;
+                i_index_Word++;
+                i_index_upper++;
             }
 
-            upper_array[index_upper] = SPACE;
+            ca_upper_array[i_index_upper] = SPACE;
 
-            index_upper++;
+            i_index_upper++;
         }
-
         // 소문자 구분
         else
-        if (Word[index_Word] >= 97 && Word[index_Word] <= 122){
-            
-            while (!(Word[index_Word] == SPACE)){
-                lower_array[index_lower] = Word[index_Word];
+        if (ca_Word[i_index_Word] >= 'a' && ca_Word[i_index_Word] <= 'z'){            
+            while (!(ca_Word[i_index_Word] == SPACE)){
+                ca_lower_array[i_index_lower] = ca_Word[i_index_Word];
 
-                index_Word++;
-                index_lower++;
+                i_index_Word++;
+                i_index_lower++;
             }
             
-            lower_array[index_lower] = SPACE;
+            ca_lower_array[i_index_lower] = SPACE;
 
-            index_lower++;
+            i_index_lower++;
         }
-    }
-    
+    }    
     // 공백 제거
-    lower_array[strlen(lower_array) - 1] = 0x00;
-
+    ca_lower_array[strlen(ca_lower_array) - 1] = 0x00;
     
-    int l = strlen(lower_array);
-    int index_reverse = 0;    
-    int index_temp;
-    int x = 0;
+    int l = strlen(ca_lower_array);
+    int i_index_reverse = 0;    
+    int i_index_temp;
+    int i = 0;
 
-    // lower_array 배열을 역순회
+    // ca_lower_array 배열을 역순회
     for (l; l >= 0; l--){
-        // 공백으로 단어를 구분. reverse_array 배열에 추가.
-        if (lower_array[l] == SPACE){
-            index_temp = l + 1;
+        // 공백으로 단어를 구분. ca_reverse_array 배열에 추가.
+        if (ca_lower_array[l] == SPACE){
+            i_index_temp = l + 1;
 
-            while (!(lower_array[index_temp] == SPACE || lower_array[index_temp] == 0x00)){
-                reverse_array[index_reverse] = lower_array[index_temp];                
+            while (!(ca_lower_array[i_index_temp] == SPACE || ca_lower_array[i_index_temp] == 0x00)){
+                ca_reverse_array[i_index_reverse] = ca_lower_array[i_index_temp];                
 
-                index_reverse++;
-                index_temp++;
+                i_index_reverse++;
+                i_index_temp++;
             }
-
             // 단어를 배열에 담고 띄어쓰기 한 칸.
-            reverse_array[index_reverse] = SPACE;
+            ca_reverse_array[i_index_reverse] = SPACE;
 
-            index_reverse++;
+            i_index_reverse++;
         }
 
 
         // 배열 순회가 끝나기 직전, lower_array의 첫 단어를 담는다.
         if (l == 0) {
-            while (!(lower_array[x] == SPACE)){
-                reverse_array[index_reverse] = lower_array[x];
+            while (!(ca_lower_array[i] == SPACE)){
+                ca_reverse_array[i_index_reverse] = ca_lower_array[i];
 
-                index_reverse++;
-                x++;
+                i_index_reverse++;
+                i++;
             }
         }
     }
 
-    cout << upper_array << " " << reverse_array;
+    cout << ca_upper_array << " " << ca_reverse_array;
 }
